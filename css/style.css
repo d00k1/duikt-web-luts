@@ -1,0 +1,239 @@
+/* основні налаштування та змінні */
+:root {
+    --primary-color: #2563eb;       /* Синій акцентний колір */
+    --primary-dark: #1d4ed8;        /* Темніший відтінок для ховерів */
+    --bg-color: #f8fafc;            /* Колір фону сторінки */
+    --card-bg: #ffffff;             /* Фон карток/секцій */
+    --text-color: #1e293b;          /* Основний колір тексту */
+    --text-muted: #64748b;          /* Додатковий/приглушений текст */
+    --border-color: #e2e8f0;        /* Колір ліній та рамки */
+    --transition: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* шапка */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: #ffffff;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* навігація */
+nav {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    background-color: #f1f5f9;
+}
+
+/* основний вміст */
+main {
+    flex: 1;
+    max-width: 1000px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: var(--primary-dark);
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* "про мене" */
+.about-content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.about-content img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* списки */
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.75rem;
+}
+
+li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+/* таблиці (розклад) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+td small {
+    color: var(--text-muted);
+    display: block;
+    margin-top: 4px;
+}
+
+/* футер */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        padding: 0.75rem;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto; /* Додає горизонтальний скрол для таблиці на вузьких екранах */
+    }
+}
